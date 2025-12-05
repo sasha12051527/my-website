@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>星座選択ページ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    select {
+      padding: 5px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body style="background-color: #ffffe0;">
+  <h1 style="color: #dda0dd;">あなたの星座を選んでください</h1>
+  
+  <!-- プルダウンメニュー -->
+  <select id="zodiac">
+    <option value="">-- 星座を選択 --</option>
+    <option value="牡羊座">牡羊座</option>
+    <option value="牡牛座">牡牛座</option>
+    <option value="双子座">双子座</option>
+    <option value="蟹座">蟹座</option>
+    <option value="獅子座">獅子座</option>
+    <option value="乙女座">乙女座</option>
+    <option value="天秤座">天秤座</option>
+    <option value="蠍座">蠍座</option>
+    <option value="射手座">射手座</option>
+    <option value="山羊座">山羊座</option>
+    <option value="水瓶座">水瓶座</option>
+    <option value="魚座">魚座</option>
+  </select>
+
+  <!-- 選択結果を表示する場所 -->
+  <div id="result"></div>
+
+  <script>
+    const selectElement = document.getElementById("zodiac");
+    const resultDiv = document.getElementById("result");
+    // 星座ごとの色を定義
+    const colors = {
+      "牡羊座": "red",
+      "牡牛座": "green",
+      "双子座": "blue",
+      "蟹座": "purple",
+      "獅子座": "orange",
+      "乙女座": "brown",
+      "天秤座": "pink",
+      "蠍座": "darkred",
+      "射手座": "gold",
+      "山羊座": "gray",
+      "水瓶座": "teal",
+      "魚座": "navy"
+    };
+
+    // 選択が変わったときに実行
+    selectElement.addEventListener("change", () => {
+      const selected = selectElement.value;
+      if (selected) {
+        resultDiv.textContent = `あなたの星座は「${selected}」ですね！`;
+        resultDiv.style.color = colors[selected]; // 星座ごとに色を変える
+
+      } else {
+        resultDiv.textContent = "";
+      }
+    });
+  </script>
+</body>
+</html>
