@@ -2,82 +2,54 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>星座選択ページ</title>
+  <title>おとめざ日記</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
+    /* number入力の上下キーを非表示にする */
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
-    select {
-      padding: 5px;
-      font-size: 16px;
-    }
-    #result {
-      margin-top: 20px;
-      font-size: 18px;
-      color: darkblue;
+    input[type=number] {
+      -moz-appearance: textfield; /* Firefox用 */
     }
   </style>
 </head>
-<body style="background-color: #3d4d99;">
-  <h1 style="color: #dda0dd;">あなたの星座を選んでください</h1>
+<body>
+  <style>
+    body{
+      background: linear-gradient(to bottom, #0075c2, #f3981d);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    h1{
+      color: #cbd0d3;
+      font-family: "Yu Gothic";
+      text-align: center;
+    }
+    form{
+      text-align: center;
+      color: aliceblue;
+    }
+    .box{
+      color: #a2d7dd;
+      text-align:justify;
+      width: 900px;
+      height: 800px;
+      background-color: aliceblue;
+      /*border: 1px solid #000;*/
+      margin-left: 300px;
+      margin-top: 200px;
+    }
+  </style>
   
-  <!-- プルダウンメニュー -->
-  <select id="zodiac">
-    <option value="">-- 星座を選択 --</option>
-    <option value="牡羊座">牡羊座</option>
-    <option value="牡牛座">牡牛座</option>
-    <option value="双子座">双子座</option>
-    <option value="蟹座">蟹座</option>
-    <option value="獅子座">獅子座</option>
-    <option value="乙女座">乙女座</option>
-    <option value="天秤座">天秤座</option>
-    <option value="蠍座">蠍座</option>
-    <option value="射手座">射手座</option>
-    <option value="山羊座">山羊座</option>
-    <option value="水瓶座">水瓶座</option>
-    <option value="魚座">魚座</option>
-  </select>
+  <h1>おとめざ日記</h1>
 
-  <!-- 選択結果を表示する場所 -->
-  <div id="result"></div>
-
-  <script>
-    const selectElement = document.getElementById("zodiac");
-    const resultDiv = document.getElementById("result");
-    // 星座ごとの色を定義
-    const colors = {
-      "牡羊座": "red",
-      "牡牛座": "green",
-      "双子座": "blue",
-      "蟹座": "purple",
-      "獅子座": "orange",
-      "乙女座": "brown",
-      "天秤座": "pink",
-      "蠍座": "darkred",
-      "射手座": "gold",
-      "山羊座": "gray",
-      "水瓶座": "teal",
-      "魚座": "navy"
-    };
-
-    // 選択が変わったときに実行
-    selectElement.addEventListener("change", () => {
-      const selected = selectElement.value;
-      if (selected) {
-        resultDiv.textContent = `あなたの星座は「${selected}」ですね！`;
-        resultDiv.style.color = colors[selected]; // 星座ごとに色を変える
-
-      } else {
-        resultDiv.textContent = "";
-      }
-    });
   </script>
+  <div class="box">
+    <p>ここに文章を入力</p>
+  </div>
+  <a href="https://www.google.com">Googleへ移動</a>
 </body>
 </html>
-
-
-
-
-
